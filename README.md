@@ -58,7 +58,7 @@ $post->foreign('tag_id')->references('id')->on('tag')
 $post->update();
 ```
 
-Use Phinx's default syntax to delete or existence-check foreign keys (`$table->dropForeignKey('tag_id')` and `$table->hasForeignKey('tag_id')`). See [Phinx Docs](https://book.cakephp.org/phinx/)
+Use Phinx's default syntax to delete or existence-check foreign keys (`$table->dropForeignKey('tag_id')` and `$table->hasForeignKey('tag_id')`). See [Phinx Docs: Working With Foreign Keys](https://book.cakephp.org/phinx/0/en/migrations.html#working-with-foreign-keys)
 
 ### Methods
 
