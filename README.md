@@ -1,5 +1,5 @@
 # Pretty Phinx
-Adds prettified and readable syntax to popular [Phinx](https://github.com/cakephp/phinx) migration library. Phinx's default syntax can become cluttered and hard to read at times. Pretty Phinx adds more readable syntax to the Phinx library to make the process of managing database migrations a breeze. It uses method-chaining instead of arguements and adds more easy-to-use methods to create popular column types.
+Adds prettified and readable syntax to popular **[Phinx](https://github.com/cakephp/phinx)** migration library. Phinx's default syntax can become cluttered and hard to read at times. Pretty Phinx adds more readable syntax to the Phinx library to make the process of managing database migrations a breeze. It uses method-chaining instead of arguements and adds more easy-to-use methods to create popular column types.
 
 ## Installation
 Using composer
@@ -23,7 +23,7 @@ $post->string('title')->length(255)->add();
 $post->text('content')->nullable()->add();
 $post->create();
 ```
-By default, automatic primary key creation is disabled. You've to manually create the primary keys using auto-incrementing methods.
+By default, automatic primary key creation is disabled. You've to manually create the primary keys using [auto-incrementing methods](#auto-incrementing-methods).
 
 #### Updating tables 
 ```php
