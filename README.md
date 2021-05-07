@@ -52,10 +52,13 @@ $post->unsignedBigInteger('tag_id');
 
 $post->foreign('tag_id')->references('id')->on('tag')
   ->onUpdate('cascade')
-  ->onDelete('cascade');
+  ->onDelete('cascade')
+  ->add();
 
 $post->update();
 ```
+
+Use Phinx's default syntax to delete or existence-check foreign keys (`$table->dropForeignKey('tag_id')' and `$table->hasForeignKey('tag_id')`). See [Phinx Docs](https://book.cakephp.org/phinx/)
 
 ### Methods
 
