@@ -14,7 +14,7 @@ Use `vendor/bin/pretty-phinx` instead of `vendor/bin/phinx` to access console to
 
 ### Migrations
 
-Creating tables 
+#### Creating tables 
 ```php
 $post = $this->table('post');
 $post->bigIncrements('id')->add();
@@ -25,7 +25,7 @@ $post->create();
 ```
 By default, automatic primary key creation is disabled. You've to manually create the primary keys using auto-incrementing methods.
 
-Updating tables 
+#### Updating tables 
 ```php
 $post = $this->table('post');
 $post->bigIncrements('id')->change();
@@ -39,7 +39,7 @@ $post->update();
 
 Use `->change()` instead of `->add()` to amend column.
 
-Foreign Keys 
+#### Foreign Keys 
 ```php
 $tag = $this->table('tag');
 $tag->bigIncrements()->add();
@@ -85,7 +85,7 @@ $table->date();
 $table->time();
 ``` 
 
-Auto-incrementing methods
+#### Auto-incrementing methods
 ```php
 // these methods will create an auto-incrementing column
 $table->bigIncrements();
@@ -95,7 +95,7 @@ $table->tinyIncrements();
 $table->increments();
 ```
 
-Modifiers
+#### Modifiers
 ```php
 // ->length()
 $table->string('title')->length(100)->add();
