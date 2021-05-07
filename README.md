@@ -51,8 +51,8 @@ $post = $this->table('post');
 $post->unsignedBigInteger('tag_id');
 
 $post->foreign('tag_id')->references('id')->on('tag')
-  ->setUpdate('cascade')
-  ->setUpdate('cascade');
+  ->onUpdate('cascade')
+  ->onDelete('cascade');
 
 $post->update();
 ```
