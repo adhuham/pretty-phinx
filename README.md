@@ -125,6 +125,7 @@ $table->string('title')->charset('utf8')->add();
 $table->string('title')->collation('utf8_general_ci')->add();
 ```
 
+#### Encoding
 Default charset/collation is `utf8mb4` and `utf8mb4_unicode_ci` for both table and columns.
 
 To change the collation of table
