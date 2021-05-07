@@ -1,5 +1,5 @@
 # Pretty Phinx
-Adds prettified and readable syntax to popular **[Phinx](https://github.com/cakephp/phinx)** migration library. Phinx's default syntax can become cluttered and hard to read at times. Pretty Phinx adds more readable syntax to the Phinx library to make the process of managing database migrations a breeze. It uses method-chaining instead of arguements and adds more easy-to-use methods to create popular column types.
+Pretty Phinx adds prettified and readable syntax to popular **[Phinx](https://github.com/cakephp/phinx)** migration library. Phinx's default syntax can become cluttered and hard-to-read at times. Pretty Phinx adds readable syntax to the Phinx library to ease the process of managing migrations. It uses method-chaining instead of method arguements, and adds handy methods to deal with popular column types.
 
 ## Installation
 Using composer
