@@ -23,6 +23,7 @@ $post->string('title')->length(255)->add();
 $post->text('content')->nullable()->add();
 $post->create();
 ```
+By default, automatic primary key creation is disabled. You've to manually create the primary keys using auto-incrementing methods.
 
 Updating tables 
 ```php
@@ -38,7 +39,23 @@ $post->update();
 
 Use `->change()` instead of `->add()` to amend column.
 
-By default, automatic primary key creation is disabled. You've to manually create the primary keys using auto-incrementing methods.
+Foreign Keys 
+```php
+$tag = $this->table('tag');
+$tag->bigIncrements()->add();
+$tag->string('slug')->unique()->add();
+$tag->string('name')->add();
+$tag->create();
+
+$post = $this->table('post');
+$post->unsignedBigInteger('tag_id');
+
+$post->foreign('tag_id')->references('tag')->on('id')
+  ->setUpdate('cascade')
+  ->setUpdate('cascade');
+
+$post->update();
+```
 
 ### Methods
 
@@ -70,6 +87,7 @@ $table->time();
 
 Auto-incrementing methods
 ```php
+// these methods will create an auto-incrementing column
 $table->bigIncrements();
 $table->mediumIncrements();
 $table->smallIncrements();
