@@ -461,7 +461,16 @@ class Table extends PhinxTable
         return $this;
     }
 
-    public function references(string $table)
+    public function references(string $foreignKey)
+    {
+        if (!empty($this->foreign)) {
+            $this->foreign['foreignField'] = $foreignKey;
+        }
+
+        return $this;
+    }
+
+    public function on(string $table)
     {
         if (!empty($this->foreign)) {
             $this->foreign['table'] = $table;
@@ -470,14 +479,6 @@ class Table extends PhinxTable
         return $this;
     }
 
-    public function on(string $foreignKey)
-    {
-        if (!empty($this->foreign)) {
-            $this->foreign['on'] = $foreignKey;
-        }
-
-        return $this;
-    }
 
     public function onUpdate(string $action)
     {
@@ -544,7 +545,7 @@ class Table extends PhinxTable
             $this->addForeignKey(
                 $this->foreign['field'],
                 $this->foreign['table'],
-                $this->foreign['on'],
+                $this->foreign['foreignField'],
                 $opts
             );
         }

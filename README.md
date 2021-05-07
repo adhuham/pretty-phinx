@@ -50,7 +50,7 @@ $tag->create();
 $post = $this->table('post');
 $post->unsignedBigInteger('tag_id');
 
-$post->foreign('tag_id')->references('tag')->on('id')
+$post->foreign('tag_id')->references('id')->on('tag')
   ->setUpdate('cascade')
   ->setUpdate('cascade');
 
