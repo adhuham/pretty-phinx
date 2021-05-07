@@ -1,0 +1,6 @@
+vendor/
+
+# vim backups
+*.swo
+*.swn
+*.swp

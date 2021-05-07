@@ -1,0 +1,24 @@
+{
+  "name": "adhuham/pretty-phinx",
+  "type": "library",
+  "description": "Phinx, but prettified",
+  "keywords": ["php", "mysql", "pretty-phinx", "phinx", "migrations", "database-migrations"],
+  "homepage": "https://adhuham.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mohamed Adhuham",
+      "email": "hello@adhuham.com",
+      "homepage": "https://adhuham.com/",
+      "role": "Owner"
+    }
+  ],
+  "require": {
+    "robmorgan/phinx": "^0.12.6",
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {"PrettyPhinx\\": "src/"}
+  },
+  "bin": ["bin/pretty-phinx"]
+}
