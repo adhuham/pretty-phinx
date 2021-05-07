@@ -1,5 +1,5 @@
 # Pretty Phinx
-Adds prettified and readable syntax to popular Phinx migration library. Phinx's default syntax can become cluttered and hard to read at times. Pretty Phinx adds more readable syntax to the Phinx library to make the process of managing database migrations a breeze. It uses method-chaining instead of arguements and adds more easy-to-use methods to create popular column types.
+Adds prettified and readable syntax to popular [Phinx](https://github.com/cakephp/phinx) migration library. Phinx's default syntax can become cluttered and hard to read at times. Pretty Phinx adds more readable syntax to the Phinx library to make the process of managing database migrations a breeze. It uses method-chaining instead of arguements and adds more easy-to-use methods to create popular column types.
 
 ## Installation
 Using composer
@@ -14,7 +14,7 @@ Use `vendor/bin/pretty-phinx` instead of `vendor/bin/phinx` to access console to
 
 ### Migrations
 
-Creating tables. 
+Creating tables 
 ```php
 $post = $this->table('post');
 $post->bigIncrements('id')->add();
@@ -24,23 +24,27 @@ $post->text('content')->nullable()->add();
 $post->create();
 ```
 
-Updating tables. 
+Updating tables 
 ```php
 $post = $this->table('post');
 $post->bigIncrements('id')->change();
 $post->string('slug')->unique()->change();
-$post->string('title')->length(255)->change();
+$post->string('title')->length(255)->nullable()->change();
 $post->text('content')->nullable()->change();
+
+$post->string('sub_title')->after('title');
 $post->update();
 ```
 
+Use `->change()` instead of `->add()` to amend column.
+
 By default, automatic primary key creation is disabled. You've to manually create the primary keys using auto-incrementing methods.
 
-### Available Methods
+### Methods
 
 ```php
 $table->unsignedBigInteger();
-$table->unsignedSmallInteger();
+$table->unsignedMediumInteger();
 $table->unsignedSmallInteger();
 $table->unsignedTinyInteger();
 $table->unsignedInteger();
@@ -64,11 +68,32 @@ $table->date();
 $table->time();
 ``` 
 
-Auto-incrementing methods.
-``php
+Auto-incrementing methods
+```php
 $table->bigIncrements();
 $table->mediumIncrements();
 $table->smallIncrements();
 $table->tinyIncrements();
 $table->increments();
+```
+
+Modifiers
+```php
+// ->length()
+$table->string('title')->length(100)->add();
+
+// ->default()
+$table->string('title')->default('untitled')->add();
+
+// ->nullable()
+$table->string('title')->nullable()->add();
+
+// ->unique()
+$table->string('title')->unique()->add();
+
+// ->index()
+$table->string('title')->index()->add();
+
+// ->after()
+$table->string('title')->after('another_column')->add();
 ```
