@@ -117,4 +117,21 @@ $table->string('title')->index()->add();
 
 // ->after()
 $table->string('title')->after('another_column')->add();
+
+// ->charset()
+$table->string('title')->charset('utf8')->add();
+
+// ->collation()
+$table->string('title')->collation('utf8_general_ci')->add();
+```
+
+Default charset/collation is `utf8mb4` and `utf8mb4_unicode_ci` for both table and columns.
+
+To change the collation of table
+```php
+$table = $this->table('post');
+$table->collation('utf8_general_ci');
+// ... 
+// ...
+$table->update();
 ```
