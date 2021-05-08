@@ -36,7 +36,6 @@ $post->string('title')->length(255)->add();
 $post->text('content')->nullable()->add();
 $post->create();
 ```
-By default, automatic primary key creation is disabled. You've to manually create the primary keys using [auto-incrementing methods](#auto-incrementing-methods).
 
 #### Updating tables 
 ```php
@@ -51,6 +50,9 @@ $post->update();
 ```
 
 Use `->change()` instead of `->add()` to amend column.
+
+#### Primary Keys
+By default, automatic primary key creation is disabled. You've to manually create the primary keys using [auto-incrementing methods](#auto-incrementing-methods).
 
 #### Foreign Keys 
 ```php
@@ -101,7 +103,7 @@ $table->date();
 $table->time();
 ``` 
 
-#### Auto-incrementing methods
+#### Auto-incrementing
 ```php
 // these methods will create an auto-incrementing column
 $table->bigIncrements();
