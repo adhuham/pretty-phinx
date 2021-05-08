@@ -121,6 +121,7 @@ $table->string('title')->default('untitled')->add();
 
 // ->nullable()
 $table->string('title')->nullable()->add();
+$table->string('title')->nullable(false)->add(); // disable null (NOT NULL)
 
 // ->unique()
 $table->string('title')->unique()->add();
@@ -141,9 +142,10 @@ $table->string('title')->collation('utf8_general_ci')->add();
 #### Encoding
 Default charset/collation is `utf8mb4` and `utf8mb4_unicode_ci` for both table and columns.
 
-To change the collation of table
+To change the collation of a table
 ```php
 $table = $this->table('post');
+// this changes the collation of "post" table
 $table->collation('utf8_general_ci');
 // ... 
 // ...
