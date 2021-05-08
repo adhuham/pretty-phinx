@@ -13,6 +13,19 @@ composer require adhuham/pretty-phinx
 Use `vendor/bin/pretty-phinx` instead of `vendor/bin/phinx` to access console tools.
 
 ### Migrations
+You need to extend `PrettyPhinx\Migration\AbstractMigration` instead of `Phinx\Migration\AbstractMigration`. When you generate migration classes using `vendor/bin/pretty-phinx` it will create the classes with the Pretty Phinx's migration base.
+
+```php
+use PrettyPhinx\Migration\AbstractMigration;
+
+class MyNewMigration extends AbstractMigration
+{
+    public function change()
+    {
+    }
+}
+
+```
 
 #### Creating tables 
 ```php
