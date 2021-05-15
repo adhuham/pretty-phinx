@@ -378,6 +378,18 @@ class Table extends PhinxTable
         return $this;
     }
 
+    public function timestamp(string $name)
+    {
+        $this->field = [
+            'name' => $name,
+            'type' => 'timestamp',
+            'opts' => [],
+            'index' => null
+        ];
+
+        return $this;
+    }
+
     public function default($value)
     {
         $this->field['opts']['default'] = $value;
