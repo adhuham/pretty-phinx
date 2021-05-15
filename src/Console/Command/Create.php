@@ -12,8 +12,6 @@ class Create extends PhinxCreate
 {
     protected static $defaultName = 'create';
 
-    protected const DEFAULT_MIGRATION_TEMPLATE = '/../src/Console/Migration/migration.template.php.dist';
-
     protected function loadConfig(InputInterface $input, OutputInterface $output)
     {
         $configFilePath = $this->locateConfigFile($input);

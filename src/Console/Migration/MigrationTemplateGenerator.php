@@ -30,7 +30,7 @@ class MigrationTemplateGenerator implements CreationInterface
 
     public function getMigrationTemplate()
     {
-        return file_get_contents('src/Console/Migration/migration.template.php.dist');
+        return file_get_contents(__DIR__ . '/migration.template.php.dist');
     }
 
     public function postMigrationCreation($migrationFilename, $className, $baseClassName)
