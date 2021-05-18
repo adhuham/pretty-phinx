@@ -342,6 +342,19 @@ class Table extends PhinxTable
         return $this;
     }
 
+    public function json(string $name)
+    {
+        $this->field = [
+            'name' => $name,
+            'type' => 'json',
+            'opts' => [
+            ],
+            'index' => null
+        ];
+
+        return $this;
+    }
+
     public function dateTime(string $name)
     {
         $this->field = [
