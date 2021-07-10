@@ -1,5 +1,5 @@
 # Pretty Phinx
-Pretty Phinx adds prettified and readable syntax to popular **[Phinx](https://github.com/cakephp/phinx)** migration library. Phinx's default syntax can become cluttered and hard-to-read at times. Pretty Phinx uses method-chaining instead of method arguements, and adds handy methods to deal with popular column types.
+Pretty Phinx adds prettified and readable syntax to popular **[Phinx](https://github.com/cakephp/phinx)** migration library. Phinx's default syntax can become cluttered and hard-to-read at times. Pretty Phinx uses method-chaining and adds readable methods for popular column types.
 
 ## Installation
 Using composer
@@ -7,13 +7,11 @@ Using composer
 composer require adhuham/pretty-phinx
 ```
 
-## Usage
-
 ### Console
 Use `vendor/bin/pretty-phinx` instead of `vendor/bin/phinx` to access console tools.
 
 ### Migrations
-You need to extend `PrettyPhinx\Migration\AbstractMigration` instead of `Phinx\Migration\AbstractMigration` base in your migration classes. When you generate migration classes using `vendor/bin/pretty-phinx` it will create the classes with the Pretty Phinx's migration base.
+You need to extend `PrettyPhinx\Migration\AbstractMigration` instead of `Phinx\Migration\AbstractMigration` base in your migration classes. When you generate migration classes using `vendor/bin/pretty-phinx` it will create the classes with `vendor/bin/pretty-phinx`.
 
 ```php
 use PrettyPhinx\Migration\AbstractMigration;
